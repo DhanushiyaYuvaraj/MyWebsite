@@ -2,7 +2,7 @@ let menuIcon=document.querySelector('#menu-icon');
 let navbar=document.querySelector('.navbar');
 
 menuIcon.onclick=()=>{
-    menuIcon.classList.toggle('bx-x');
+    menuIcon.classList.toggle('menu');
     navbar.classList.toggle('active');
 };
 
@@ -10,7 +10,7 @@ const themeToggleBtn = document.getElementById('theme-toggle')
 const body = document.body;
 
 themeToggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark-theme'); // Add or remove 'dark-theme' class to body
+    body.classList.toggle('dark-theme');
 });
 
 let sections=document.querySelectorAll('section');
@@ -33,7 +33,7 @@ window.onscroll = () => {
     });
     let header=document.querySelector('header');
 
-    header.classList.toggle('sticky',window.screenY>100);
+    header.classList.toggle('sticky',window.scrollY>100);
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 };
@@ -46,41 +46,40 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content,.heading',{origin:'top'});
-ScrollReveal().reveal('.home-img,.services-container,.portfolio-box,.contact form',{origin:'bottom'});
-ScrollReveal().reveal('.home-content h1,.about-img',{origin:'left'});
-ScrollReveal().reveal('.home-content p,.about-content',{origin:'right'});
+ScrollReveal().reveal('.home-img,.about-container,.contact form',{origin:'bottom'});
+ScrollReveal().reveal('.home-content h1,.intro-img',{origin:'left'});
+ScrollReveal().reveal('.home-content p,.intro-content',{origin:'right'});
 
-// Selecting elements
+// CHATBOT
+
 const chatbox = document.getElementById('chat');
 const userInput = document.getElementById('userInput');
-
-// Chatbot responses
 const responses = {
-    'hello': 'Hi there! How can I help you?',
-    'bye': 'Goodbye! Have a great day!',
-    // Add more responses here
+    'hey':'Hi there! How can I assist you?',
+    'hi':'Hi there! How can I assist you?',
+    'hello': 'Hi there! How can I assist you?',
+    'bye': 'Goodbye! Have a wonderful day!',
+    'thank you':'My pleasure',
+    'thanks':'My Welcome',
+    'do you know about dhanushiya':'You can check out this portfolio to know about dhanushiya',
+    'dhanushiya':'You can check out this portfolio to know about dhanushiya',
+    'how to contact':'send me message through contact me. I will contact you'
 };
 
-// Function to send a message
 function sendMessage() {
     const message = userInput.value;
-    // Display user message
     displayMessage('You: ' + message);
-    // Get chatbot response
     getResponse(message.toLowerCase());
-    // Clear user input
     userInput.value = '';
 }
 
-// Function to display messages in the chat window
 function displayMessage(message) {
     const div = document.createElement('div');
     div.innerText = message;
     chatbox.appendChild(div);
 }
 
-// Function to get chatbot response based on user input
 function getResponse(message) {
     const response = responses[message] || "I'\m sorry, I don't understand that.";
-    displayMessage('Chatbot: ' + response);
+    displayMessage('Dhanushiya: ' + response);
 }
