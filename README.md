@@ -11,3 +11,4 @@ Technology used: HTML, CSS, JavaScript, Google Firebase.
 8.Implemented with smooth scroll functionality and scroll reveal animations, enhancing the website's interactivity and visual appeal.
 A 'Back to Top' button ensures easy navigation, allowing visitors to seamlessly return to the top of the page.
 Website Link: 
+https://dhanushiyayuvaraj.github.io/MyWebsite/
